@@ -4,6 +4,18 @@ Network AI course project
 ## Code changes
 ai_models.py modified version of userQuery function.
 
+```
+    try:
+        ret = json.loads(json_string)
+        print("correct json format")
+    except json.JSONDecodeError:
+        print("Incorrect json format")
+        continue
+    #ret = json.loads(json_string)
+    if ret is None:
+        continue
+```
+
 ## Datasets
 
 node10c1.json generated with the following command.
