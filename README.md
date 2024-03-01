@@ -2,7 +2,7 @@
 Network AI course project
 
 ## Code changes
-ai_models.py modified version of userQuery function.
+test_with_golden.py modified version of userQuery function.
 
 ```
     try:
