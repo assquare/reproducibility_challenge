@@ -1,0 +1,92 @@
+Spent a total of 526 tokens
+Current prompt:  How many nodes are in the graph? Return only the number.
+Find the prompt in the list.
+Calling model
+Spent a total of 259 tokens
+model returned
+llm_answer:  "type": "text",
+"data": "10"
+Pass the test!
+=========Current query process is done!=========
+How many nodes are in the graph? Return only the number.
+Total test times:  1
+Testing accuracy:  1.0
+Current prompt:  How many nodes and edges are in the graph? Return a list.
+Find the prompt in the list.
+Calling model
+Retrying langchain_community.llms.openai.completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised RateLimitError: Rate limit reached for gpt-4 in organization org-4NeHi4PnTcJvyzrSSuOE4iAK on tokens per min (TPM): Limit 10000, Used 7877, Requested 2299. Please try again in 1.056s. Visit https://platform.openai.com/account/rate-limits to learn more..
+Spent a total of 265 tokens
+model returned
+llm_answer:  "type": "list",
+"data": [10, 45]
+Pass the test!
+=========Current query process is done!=========
+How many nodes and edges are in the graph? Return a list.
+Total test times:  1
+Testing accuracy:  1.0
+Current prompt:  Add a label app:prod to nodes with address prefix 15.76 and add the label app:test to nodes with address prefix 149.196. Return the networkx graph object.
+Find the prompt in the list.
+Calling model
+Retrying langchain_community.llms.openai.completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised RateLimitError: Rate limit reached for gpt-4 in organization org-4NeHi4PnTcJvyzrSSuOE4iAK on tokens per min (TPM): Limit 10000, Used 5577, Requested 6270. Please try again in 11.082s. Visit https://platform.openai.com/account/rate-limits to learn more..
+Retrying langchain_community.llms.openai.completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised RateLimitError: Rate limit reached for gpt-4 in organization org-4NeHi4PnTcJvyzrSSuOE4iAK on tokens per min (TPM): Limit 10000, Used 4858, Requested 6270. Please try again in 6.768s. Visit https://platform.openai.com/account/rate-limits to learn more..
+Retrying langchain_community.llms.openai.completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised RateLimitError: Rate limit reached for gpt-4 in organization org-4NeHi4PnTcJvyzrSSuOE4iAK on tokens per min (TPM): Limit 10000, Used 4144, Requested 6270. Please try again in 2.484s. Visit https://platform.openai.com/account/rate-limits to learn more..
+Traceback (most recent call last):
+  File "/home/sidibeam/NeMoEval/app_traffic_analysis/baseline/test_with_golden.py", line 250, in <module>
+    main()
+  File "/home/sidibeam/NeMoEval/app_traffic_analysis/baseline/test_with_golden.py", line 246, in main
+    userQuery(prompt_list, graph_json)
+  File "/home/sidibeam/NeMoEval/app_traffic_analysis/baseline/test_with_golden.py", line 89, in userQuery
+    answer = pyGraphNetExplorer.run(requestData['llm-prompt'])
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 145, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/base.py", line 545, in run
+    return self(args[0], callbacks=callbacks, tags=tags, metadata=metadata)[
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/_api/deprecation.py", line 145, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/base.py", line 378, in __call__
+    return self.invoke(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/base.py", line 163, in invoke
+    raise e
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/base.py", line 153, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/llm.py", line 103, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain/chains/llm.py", line 115, in generate
+    return self.llm.generate_prompt(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/language_models/llms.py", line 568, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/language_models/llms.py", line 741, in generate
+    output = self._generate_helper(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/language_models/llms.py", line 605, in _generate_helper
+    raise e
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_core/language_models/llms.py", line 592, in _generate_helper
+    self._generate(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_community/llms/openai.py", line 1159, in _generate
+    full_response = completion_with_retry(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_community/llms/openai.py", line 123, in completion_with_retry
+    return _completion_with_retry(**kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/tenacity/__init__.py", line 314, in iter
+    return fut.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/langchain_community/llms/openai.py", line 121, in _completion_with_retry
+    return llm.client.create(**kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/home/sidibeam/my_env/lib/python3.10/site-packages/openai/api_requestor.py", line 765, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: This model's maximum context length is 8192 tokens. However, you requested 8311 tokens (6263 in the messages, 2048 in the completion). Please reduce the length of the messages or completion.
